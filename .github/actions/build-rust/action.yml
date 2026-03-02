@@ -44,7 +44,7 @@ runs:
         RUSTUP_HOME: ${{ env.DEV_DRIVE }}/.rustup
 
     - name: Set CC
-      if: ${{ contains(inputs.target, 'linux') && inputs.no-build != 'true' }}
+      if: ${{ inputs.target == 'x86_64-unknown-linux-gnu' && inputs.no-build != 'true' }}
       working-directory: ${{ env.DEV_DRIVE_WORKSPACE || github.workspace }}
       shell: bash
       # https://github.com/tree-sitter/tree-sitter/issues/4186
